@@ -1,6 +1,7 @@
 const Users = require('../models/users.model');
 const ToDoItem = require('../models/ToDoItem.model');
 const mongoose = require('mongoose');
+const dateFormat = require('dateformat');
 
 const createTask = (req, res) => {
     const body = req.body;
@@ -15,6 +16,7 @@ const createTask = (req, res) => {
         text: body.text,
         checked: body.checked,
         index: body.index,
+        taskTime: body.taskTime
     })
     Users.findOne({_id: todo.user}, (err, user) => {
         if (!err && user) {
@@ -36,7 +38,7 @@ const createTask = (req, res) => {
 }
 
 const readTasks = (req, res) => {
-    ToDoItem.find({user: req.query.userId}, (err, todos) => {
+    ToDoItem.find({user: req.query.userId}, '-__v', (err, todos) => {
         if (!err && todos) {
             return res.send(todos);
         } else {
@@ -46,6 +48,12 @@ const readTasks = (req, res) => {
 }
 
 const deleteTasks = (req, res) => {
+    Users.findOneAndUpdate({login: req.params.userId},
+        { $pull: {todos:req.params.taskId}},{new: true},(err, userData) => {
+        console.log(err);
+        console.log(userData);
+    })
+
     ToDoItem.findOneAndDelete({_id: req.params.taskId}, (err, todos) => {
         if (!err && todos) {
             return res.send(todos);
@@ -95,6 +103,25 @@ const deleteComp = (req, res) => {
         }
     });
 }
+const setTime = (req, res) => {
+    const body = req.body;
+    ToDoItem.findOne({_id: body._id}, (err, task) => {
+        if (!err && task) {
+            task.taskTime = body.taskTime;
+            task.save()
+                .then(data => {
+                    res.json(data);
+                })
+                .catch(err => {
+                    res.status(500).json({
+                        msg: err.message
+                    });
+                });
+        } else {
+            return res.send('task not found').status(400);
+        }
+    });
+}
 
 module.exports = {
     createTask,
@@ -103,4 +130,5 @@ module.exports = {
     updateAll,
     updateTask,
     deleteComp,
+    setTime,
 };

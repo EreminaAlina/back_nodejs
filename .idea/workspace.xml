@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="19fd1979-c1fd-4919-9fdb-69a17e02b916" name="Default Changelist" comment="" />
+    <list default="true" id="19fd1979-c1fd-4919-9fdb-69a17e02b916" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/middlewares/auth.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/login.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/login.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/tasks.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tasks.controller.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/ToDoItem.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ToDoItem.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/tasks.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/tasks.router.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +41,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="JsFlowSettings">
     <service-enabled>true</service-enabled>
     <exe-path />
@@ -21,6 +51,7 @@
     <auto-save>true</auto-save>
   </component>
   <component name="ProjectId" id="1hwsCxUWBnilQkTIf89IsFELFhP" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -39,7 +70,7 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_interpreter_path" value="node" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
@@ -65,12 +96,27 @@
       <workItem from="1601965892026" duration="273000" />
       <workItem from="1601966190845" duration="41000" />
       <workItem from="1601966581116" duration="89000" />
-      <workItem from="1601966977327" duration="8472000" />
+      <workItem from="1601966977327" duration="19166000" />
+      <workItem from="1601993527520" duration="1706000" />
+      <workItem from="1602051349226" duration="1226000" />
+      <workItem from="1602069519561" duration="5169000" />
+      <workItem from="1602136473696" duration="5081000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="1199" y="357" width="580" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600933940301">
@@ -85,22 +131,24 @@
       <screen x="57" y="27" width="1863" height="1053" />
     </state>
     <state x="1170" y="316" width="424" height="484" key="FileChooserDialogImpl/57.27.1863.1053@57.27.1863.1053" timestamp="1601966612981" />
-    <state x="158" y="193" key="SettingsEditor" timestamp="1601539864058">
+    <state x="158" y="193" key="SettingsEditor" timestamp="1601992085724">
       <screen x="57" y="27" width="1863" height="1053" />
     </state>
-    <state x="158" y="193" key="SettingsEditor/57.27.1863.1053@57.27.1863.1053" timestamp="1601539864058" />
+    <state x="158" y="193" key="SettingsEditor/57.27.1863.1053@57.27.1863.1053" timestamp="1601992085724" />
     <state x="260" y="137" width="817" height="843" maximized="true" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog" timestamp="1601304176468">
       <screen x="57" y="27" width="1863" height="1053" />
     </state>
     <state x="260" y="137" width="817" height="843" maximized="true" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/57.27.1863.1053@57.27.1863.1053" timestamp="1601304176468" />
-    <state x="157" y="125" width="1663" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1601972694785">
-      <screen x="57" y="27" width="1863" height="1053" />
+    <state x="166" y="125" width="1655" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602070420913">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="157" y="125" width="1663" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/57.27.1863.1053@57.27.1863.1053" timestamp="1601972694785" />
-    <state x="1102" y="321" width="618" height="522" key="find.popup" timestamp="1601531902433">
-      <screen x="57" y="27" width="1863" height="1053" />
+    <state x="166" y="125" width="1655" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602070420913" />
+    <state x="1106" y="321" width="615" height="522" key="find.popup" timestamp="1602158189035">
+      <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1102" y="321" width="618" height="522" key="find.popup/57.27.1863.1053@57.27.1863.1053" timestamp="1601531902433" />
+    <state x="1106" y="321" width="615" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602158189035" />
     <state x="652" y="253" key="run.anything.popup" timestamp="1601475182547">
       <screen x="57" y="27" width="1863" height="1053" />
     </state>

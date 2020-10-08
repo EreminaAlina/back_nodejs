@@ -15,7 +15,7 @@ const login = (req, res) => {
     Users
         .findOne({login: login})
         .populate({path: 'todos'})
-       // .lean()
+        // .lean()
         .exec(async (err, user) => {
             if (err || !user) {
                 return res.status(398).send("Not Found");
@@ -23,8 +23,8 @@ const login = (req, res) => {
             try {
                 const validPass = await bcrypt.compare(password, user.password);
                 if (validPass) {
-                    user.access_token = jwt.sign({userId: user._id}, secret, {expiresIn: '1m'});
-                    user.refresh_token = jwt.sign({userId: user._id}, secret, {expiresIn: '30m'});
+                    user.access_token = jwt.sign({userId: user._id}, secret, {expiresIn: '10m'});
+                    user.refresh_token = jwt.sign({userId: user._id}, secret, {expiresIn: '1d'});
                     user.save();
                     delete user.password;
                     delete user.__v;
@@ -55,6 +55,7 @@ const signUp = async (req, res) => {
             });
         });
     } catch (err) {
+        console.log(err);
         return res.status(501).json({
             msg: err.message
         });
@@ -67,18 +68,35 @@ const hashPass = async (password) => {
 }
 
 const refreshToken = async (req, res) => {
-    console.log(req.body);
-    const refresh_token = req.body;
+    if (!req.body) {
+        return res.status(400).send('No data');
+    }
+    const refresh_token = req.body.refresh_token;
     if (!refresh_token) {
         return res.status(400).send('No refresh token');
     }
 
-    const newToken = jwt.sign({userId: '5f7722faff13677fcf6d9104'}, secret, {expiresIn: '30s'});
-    const user = await Users.findOne({_id: '5f7722faff13677fcf6d9104'});
-    user.access_token = newToken;
-    user.save();
-    return res.send(newToken);
+    try {
+        await jwt.verify(refresh_token, secret);
+        const user = await Users.findOne({refresh_token});
+        if (user) {
+            const newToken = jwt.sign({userId: user._id}, secret, {expiresIn: '10m'});
+            const newRToken = jwt.sign({userId: user._id}, secret, {expiresIn: '1d'});
+            user.access_token = newToken;
+            user.refresh_token = newRToken;
+            user.save();
+            return res.send({newToken, newRToken});
+        } else {
+            return res.status(400).send('No user for refresh token');
+        }
+    } catch (err) {
+        if (err.message && err.message.includes('expired')) {
+            return res.status(403).send("Refresh token has expired");
+        }
+        return res.status(400).send('Err on refresh token');
+    }
 }
+
 
 module.exports = {
     signUp,

@@ -14,6 +14,12 @@ let ToDoItemSchema = new Schema({
     index: {
         type: Number,
         required: true,
+    },
+    taskTime: {
+        type: Date,
+    },
+    estimated: {
+        type: Boolean,
     }
 });
 
