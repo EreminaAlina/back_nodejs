@@ -44,7 +44,8 @@ const signUp = async (req, res) => {
     try {
         const user = new Users({
             login: req.body.login,
-            password: await hashPass(req.body.password)
+            password: await hashPass(req.body.password),
+            theme: 'pink-bluegrey'
         });
 
         user.save().then(data => {
@@ -97,9 +98,25 @@ const refreshToken = async (req, res) => {
     }
 }
 
+const selectTheme = (req, res) => {
+    const body = req.body
+    if (body) {
+        Users.findOneAndUpdate({access_token: req.headers.authorization.split(' ')[1]}, {theme: body.theme}, {new: true}, (err, data) =>{
+            if(err){
+                res.send('theme not found').status(400);
+            } else{
+                res.json(data);
+            }
+        })
+    } else {
+        return res.send('theme not found').status(400);
+    }
+}
+
 
 module.exports = {
     signUp,
     login,
     refreshToken,
+    selectTheme
 };

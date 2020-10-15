@@ -20,14 +20,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="19fd1979-c1fd-4919-9fdb-69a17e02b916" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/middlewares/auth.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/chat.controller.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/message.model.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/chat.router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sockets/socket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/login.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/login.controller.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/controllers/tasks.controller.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/tasks.controller.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/ToDoItem.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/ToDoItem.model.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/users.model.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/users.model.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/tasks.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/tasks.router.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/login.router.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/login.router.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +104,12 @@
       <workItem from="1601993527520" duration="1706000" />
       <workItem from="1602051349226" duration="1226000" />
       <workItem from="1602069519561" duration="5169000" />
-      <workItem from="1602136473696" duration="5081000" />
+      <workItem from="1602136473696" duration="6110000" />
+      <workItem from="1602222823986" duration="10602000" />
+      <workItem from="1602482363979" duration="648000" />
+      <workItem from="1602568657452" duration="7314000" />
+      <workItem from="1602654733375" duration="12877000" />
+      <workItem from="1602741424006" duration="14463000" />
     </task>
     <servers />
   </component>
@@ -117,6 +126,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="1199" y="357" width="580" height="396" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1600933940301">
@@ -139,16 +149,20 @@
       <screen x="57" y="27" width="1863" height="1053" />
     </state>
     <state x="260" y="137" width="817" height="843" maximized="true" key="com.intellij.history.integration.ui.views.DirectoryHistoryDialog/57.27.1863.1053@57.27.1863.1053" timestamp="1601304176468" />
-    <state x="166" y="125" width="1655" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602070420913">
+    <state x="166" y="125" width="1655" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1602240993375">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="157" y="125" width="1663" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/57.27.1863.1053@57.27.1863.1053" timestamp="1601972694785" />
-    <state x="166" y="125" width="1655" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602070420913" />
-    <state x="1106" y="321" width="615" height="522" key="find.popup" timestamp="1602158189035">
+    <state x="166" y="125" width="1655" height="855" key="com.intellij.history.integration.ui.views.FileHistoryDialog/67.27.1853.1053@67.27.1853.1053" timestamp="1602240993375" />
+    <state x="67" y="27" width="1607" height="785" key="dock-window-1" timestamp="1602241978547">
+      <screen x="67" y="27" width="1853" height="1053" />
+    </state>
+    <state x="67" y="27" width="1607" height="785" key="dock-window-1/67.27.1853.1053@67.27.1853.1053" timestamp="1602241978547" />
+    <state x="972" y="295" width="615" height="522" key="find.popup" timestamp="1602760578005">
       <screen x="67" y="27" width="1853" height="1053" />
     </state>
     <state x="1102" y="321" width="618" height="522" key="find.popup/57.27.1863.1053@57.27.1863.1053" timestamp="1601531902433" />
-    <state x="1106" y="321" width="615" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602158189035" />
+    <state x="972" y="295" width="615" height="522" key="find.popup/67.27.1853.1053@67.27.1853.1053" timestamp="1602760578005" />
     <state x="652" y="253" key="run.anything.popup" timestamp="1601475182547">
       <screen x="57" y="27" width="1863" height="1053" />
     </state>

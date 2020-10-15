@@ -4,8 +4,14 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const tasks_router = require('./routes/tasks.router');
 const login_router = require('./routes/login.router');
+const chat_router = require('./routes/chat.router');
+
+const sockets = require('./sockets/socket');
 
 const app = express();
+const http = require('http').createServer(app);
+
+sockets.initSocket(http);
 
 let dev_db_url = 'mongodb://localhost:27017/alina';
 let mongoDB = process.env.MONGODB_URI || dev_db_url;
@@ -21,9 +27,10 @@ app.use(bodyParser.json());
 app.use(cors());
 app.use('/user', login_router);
 app.use('/todo', tasks_router);
+app.use('/chat', chat_router);
 
 let port = 1234;
-app.listen(port, () => {
+http.listen(port, () => {
     console.log('Server is up and running on port numner ' + port);
 });
 

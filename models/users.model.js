@@ -13,7 +13,8 @@ let UsersSchema = new Schema({
     },
     todos: [{type: Schema.Types.ObjectId, ref: 'ToDoItem'}],
     access_token: String,
-    refresh_token: String
+    refresh_token: String,
+    theme: String
 });
 
 
